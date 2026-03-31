@@ -62,13 +62,13 @@ const scrollToNext = () => {
     <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
       <!-- 顶部: 小字 -->
       <p class="text-white/40 text-sm md:text-base tracking-[0.25em] mb-6 font-light">
-        你好，我是
+        今天要分享的内容是
       </p>
 
       <!-- 主标题 - 超大字体，仿 anna.tf 风格 -->
       <h1 class="text-6xl md:text-[7rem] lg:text-[8.5rem] font-bold text-white leading-[0.9] mb-8 tracking-tight"
           style="font-family: 'Inter', 'Rajdhani', sans-serif; font-weight: 800">
-        AI 数据集
+        AI coding
       </h1>
 
       <!-- 副标题: 职位/角色 -->
