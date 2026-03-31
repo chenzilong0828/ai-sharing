@@ -55,20 +55,20 @@ const filteredRules = computed(() => {
         <div 
           v-for="(rule, index) in filteredRules" 
           :key="rule.id"
-          class="rounded-2xl flex flex-col justify-between bg-black/40 backdrop-blur-xl border border-white/[0.06] p-8 transition-all duration-700 hover:border-white/20 hover:-translate-y-1"
+          class="rounded-2xl flex flex-col h-[480px] bg-black/40 backdrop-blur-xl border border-white/[0.06] p-8 transition-all duration-700 hover:border-white/20 hover:-translate-y-1"
           :class="{ 'translate-y-0 opacity-100': isVisible, 'translate-y-12 opacity-0': !isVisible }"
           :style="{ transitionDelay: `${index * 50}ms` }"
         >
-          <div>
-            <div class="flex items-start justify-between mb-4">
-              <h3 class="text-xl font-bold text-white tracking-tight">{{ rule.title }}</h3>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono border border-white/10 text-white/50 bg-white/5 shrink-0 ml-4">
-                {{ rule.category }}
-              </span>
-            </div>
-            <p class="text-white/50 text-sm mb-6 leading-relaxed">{{ rule.description }}</p>
+          <div class="flex items-start justify-between mb-4 shrink-0">
+            <h3 class="text-xl font-bold text-white tracking-tight">{{ rule.title }}</h3>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono border border-white/10 text-white/50 bg-white/5 shrink-0 ml-4">
+              {{ rule.category }}
+            </span>
           </div>
-          <CodeSnippet :code="rule.code" :language="rule.language" />
+          <div class="flex-1 flex flex-col min-h-0">
+            <p class="text-white/50 text-sm mb-6 leading-relaxed shrink-0">{{ rule.description }}</p>
+            <CodeSnippet :code="rule.code" :language="rule.language" />
+          </div>
         </div>
         
         <div v-if="filteredRules.length === 0" class="col-span-1 md:col-span-2 text-center py-10 text-white/40">

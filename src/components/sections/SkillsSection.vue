@@ -1,12 +1,18 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { useIntersectionObserver } from '@vueuse/core'
+import { ref, computed, watch } from 'vue'
+import { useIntersectionObserver, useScrollLock } from '@vueuse/core'
 import CodeSnippet from '../common/CodeSnippet.vue'
 import { skillsDataset, type DatasetItem } from '../../data/datasets'
 
 const sectionRef = ref<HTMLElement | null>(null)
 const isVisible = ref(false)
 const selectedSkill = ref<DatasetItem | null>(null)
+
+// 修复滚动穿透 (Fix scroll penetration)
+const isLocked = useScrollLock(document.body)
+watch(selectedSkill, (val) => {
+  isLocked.value = !!val
+})
 
 const copyContent = async (content?: string) => {
   if (!content) return

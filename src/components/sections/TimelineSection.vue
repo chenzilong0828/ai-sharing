@@ -40,7 +40,7 @@ const timeline = [
   {
     stage: '插件时代：AI 走进编辑器',
     time: '2023年',
-    tools: 'GitHub Copilot、Codeium、CodeWhisperer',
+    tools: 'GitHub Copilot、Codeium、通义灵码',
     type: '侧边栏 Chat + 内联 Ghost Text',
     features: [
       '大厂抢占先机，将大模型能力直接塞进代码编辑器。',
@@ -55,7 +55,7 @@ const timeline = [
   {
     stage: 'AI 原生 IDE 时代：全局上下文协同',
     time: '2023年底-2024年初',
-    tools: 'Cursor、Windsurf、Zed、PearAI',
+    tools: 'Cursor、Windsurf、kiro',
     type: '深度融合的 AI 原生编码器',
     features: [
       '全局理解 (Codebase Context)：自动索引全项目，精准回答跨文件架构逻辑。',
@@ -71,7 +71,7 @@ const timeline = [
   {
     stage: 'Agent 时代：“自主研发工程师”',
     time: '2024年初至今',
-    tools: 'Aider、Cline、Devin、SWE-agent',
+    tools: 'Claude Code、Gemini cli',
     type: '终端 CLI + 智能任务调度终端',
     features: [
       'AI 从“辅助工具 (Copilot)”正式进化为“自主代理 (Agent)”。',

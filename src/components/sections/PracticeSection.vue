@@ -36,7 +36,7 @@ const practices = [
   { id: '07', title: '频繁存档', desc: 'Git 即时存档。AI 生成质量不错立刻 commit，留存安全伞，保证随时能倒带。' },
   { id: '08', title: '测试驱动', desc: '自动验证。要求开发完接口立即生成单测并执行，机器防线对抗错漏。' },
   { id: '09', title: '文档先行', desc: '对抗幻觉。面对新库时，使用 MCP 抓取文档或强制 AI 阅读官方手册。' },
-  { id: '10', title: '模型切分', desc: '术业有专攻。排错查源切 GPT-4o / GPT-5，写复杂 UI 和框架切 Claude 3.5。' }
+  { id: '10', title: '模型切分', desc: '术业有专攻。写复杂UI切gemini 3.1，复杂业务切 Claude Opus 4.6。' }
 ]
 
 const goldenRules = [

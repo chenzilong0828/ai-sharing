@@ -50,7 +50,7 @@ const conclusions = [
         <p class="text-white/20 text-sm">向下滚动</p>
         <div class="w-[1px] h-5 bg-white/20 mx-auto" />
         <p class="text-white/15 text-xs font-['JetBrains_Mono']">
-          © 2026 AI Programming Research · Built with Vue 3 + Three.js + TailwindCSS v4
+          纺织工珍妮的眼泪，只是时代的注脚。
         </p>
       </div>
     </div>

@@ -62,13 +62,13 @@ const scrollToNext = () => {
     <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
       <!-- 顶部: 小字 -->
       <p class="text-white/40 text-sm md:text-base tracking-[0.25em] mb-6 font-light">
-        今天要分享的内容是
+        AI 辅助下的高效编码与提效实践
       </p>
 
       <!-- 主标题 - 超大字体，仿 anna.tf 风格 -->
-      <h1 class="text-6xl md:text-[7rem] lg:text-[8.5rem] font-bold text-white leading-[0.9] mb-8 tracking-tight"
+      <h1 class="text-6xl md:text-[7rem] lg:text-[4.5rem] font-bold text-white leading-[0.9] mb-8 tracking-tight"
           style="font-family: 'Inter', 'Rajdhani', sans-serif; font-weight: 800">
-        AI coding
+        解决你的重复劳动
       </h1>
 
       <!-- 副标题: 职位/角色 -->
@@ -82,33 +82,6 @@ const scrollToNext = () => {
           {{ displayText }}<span class="animate-pulse text-white/50">|</span>
         </span>
       </div>
-
-      <!-- 社交图标行 - 仿 anna.tf 的圆形图标 -->
-      <div class="flex items-center justify-center gap-5">
-        <a
-          v-for="link in [
-            { icon: '📧', label: 'Email', href: '#' },
-            { icon: '🐙', label: 'GitHub', href: '#' },
-            { icon: '💬', label: 'Blog', href: '#' },
-            { icon: '📝', label: 'Notes', href: '#' },
-          ]"
-          :key="link.label"
-          :href="link.href"
-          class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-sm hover:border-white/40 hover:bg-white/5 transition-all duration-300"
-          :title="link.label"
-        >
-          {{ link.icon }}
-        </a>
-      </div>
-    </div>
-
-    <!-- 底部滚动提示 -->
-    <div
-      class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 cursor-pointer opacity-40 hover:opacity-70 transition-opacity"
-      @click="scrollToNext"
-    >
-      <span class="text-[11px] text-white tracking-[0.3em]">向下滚动</span>
-      <div class="w-[1px] h-6 bg-white/40 animate-pulse" />
     </div>
   </section>
 </template>

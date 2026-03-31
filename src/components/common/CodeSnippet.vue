@@ -22,9 +22,9 @@ const copyToClipboard = async () => {
 </script>
 
 <template>
-  <div class="relative group mt-4 rounded-xl overflow-hidden bg-black/60 border border-white/10">
+  <div class="relative group mt-1 rounded-xl overflow-hidden bg-black/60 border border-white/10 flex flex-col min-h-0 flex-1">
     <!-- Header -->
-    <div class="flex items-center justify-between px-4 py-2 bg-black/40 border-b border-white/5">
+    <div class="flex items-center justify-between px-4 py-2 bg-black/40 border-b border-white/5 shrink-0">
       <span class="text-xs text-white/40 font-mono">{{ language || 'text' }}</span>
       <button 
         @click="copyToClipboard"
@@ -36,8 +36,33 @@ const copyToClipboard = async () => {
       </button>
     </div>
     <!-- Code -->
-    <div class="p-4 overflow-x-auto">
+    <div class="p-4 overflow-x-auto overflow-y-auto custom-scrollbar flex-1 min-h-0">
       <pre class="font-mono text-sm leading-relaxed text-white/80 whitespace-pre-wrap">{{ code }}</pre>
     </div>
   </div>
 </template>
+
+<style scoped>
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00f0ff, #b026ff);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00f0ff, #ff2d95);
+}
+
+/* Horizontal scrollbar support */
+.custom-scrollbar::-webkit-scrollbar-thumb:horizontal {
+  background: linear-gradient(90deg, #00f0ff, #b026ff);
+}
+</style>
