@@ -114,7 +114,7 @@ const profileStats = [
             <!-- 数据指标 -->
             <div class="grid grid-cols-4 gap-3">
               <div
-                v-for="(stat, i) in profileStats"
+                v-for="stat in profileStats"
                 :key="stat.label"
                 class="text-center"
               >
