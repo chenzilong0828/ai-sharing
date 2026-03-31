@@ -50,10 +50,6 @@ onMounted(() => {
 onUnmounted(() => {
   if (typeTimer) clearTimeout(typeTimer)
 })
-
-const scrollToNext = () => {
-  document.getElementById('stats')?.scrollIntoView({ behavior: 'smooth' })
-}
 </script>
 
 <template>
