@@ -9,6 +9,7 @@ import RulesSection from './components/sections/RulesSection.vue'
 import McpSection from './components/sections/McpSection.vue'
 import SkillsSection from './components/sections/SkillsSection.vue'
 import FooterSection from './components/sections/FooterSection.vue'
+import DemoSection from './components/sections/DemoSection.vue'
 import NavigationBar from './components/NavigationBar.vue'
 import SaturnScene from './components/effects/SaturnScene.vue'
 
@@ -59,6 +60,9 @@ onMounted(() => {
 
       <!-- Skills 技能区 -->
       <SkillsSection />
+
+      <!-- 实操演示区 -->
+      <DemoSection />
 
       <!-- 页脚 -->
       <FooterSection />
