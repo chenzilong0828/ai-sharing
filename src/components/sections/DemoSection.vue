@@ -41,20 +41,26 @@ const groups = [
     subtitle: 'HTW-Table 首席专家身份与基石原则',
     content: '通过解析技能设定文件，确立 AI 的架构信仰。强制要求遵循 AURA-X-KYS 原则（KISS、YAGNI、SOLID），要求“配置即 UI”，彻底解耦视图和逻辑层，并且严格禁止随意生成冗余的表格分页组件代码。',
     clickable: true,
-    docPath: '/docs/gen-crud-skill.md'
+    docPath: '/docs/gen-crud-skill.md',
+    gifSrc: '/gif/1.gif',
+    fileName: 'ai_blueprint_1.gif'
   },
   {
     title: '⛓️ 执行框架: workflow/gen-curd.md',
     subtitle: '标准化的四步强制纯文本向导',
     content: '不再是一键盲猜生成的灾难。系统通过标准 4 步强制拦截对话：1.确认业务实体 -> 2.绑定接口路径 -> 3.精简功能矩阵 -> 4.选定数据列与文件生成。步步为营，确保收集到的需求没有任何二义性。',
     clickable: true,
-    docPath: '/docs/gen-crud-workflow.md'
+    docPath: '/docs/gen-crud-workflow.md',
+    gifSrc: '/gif/2.gif',
+    fileName: 'wizard_guide_2.gif'
   },
   {
     title: '🚀 实操协同',
     subtitle: '1 + 1 > 2 的极速编码流',
     content: '用户只需要输入 `/gen-crud` 或表达新建增删改查页面意图，系统即刻化身专家。按照一问一答的友好交互最终一键直达，直接利用 write_to_file 写入最干净、可维护性极高的 <htw-table> 规范模板，杜绝后续重构成本。',
-    clickable: false
+    clickable: false,
+    gifSrc: '/gif/3.gif',
+    fileName: 'live_demo_3.gif'
   }
 ]
 </script>
@@ -106,14 +112,14 @@ const groups = [
                 <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                 <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
                 <div class="ml-auto text-[10px] text-white/30 font-mono">
-                  > demo_part_{{ index + 1 }}.mp4
+                  > {{ group.fileName || `demo_part_${index + 1}.mp4` }}
                 </div>
               </div>
               
               <!-- 视频区域 -->
-              <div class="relative aspect-video bg-[#050508] flex items-center justify-center">
-                <!-- <video :src="group.videoSrc" controls class="w-full h-full object-cover"></video> -->
-                <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10">
+              <div class="relative aspect-video bg-[#050508] flex items-center justify-center overflow-hidden">
+                <img v-if="group.gifSrc" :src="group.gifSrc" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
+                <div v-else class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10">
                   <div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center cursor-pointer transition-transform group-hover:scale-110 group-hover:bg-cyan-500/20 shadow-[0_0_20px_rgba(34,211,238,0.2)]">
                     <div class="w-0 h-0 border-t-[10px] border-t-transparent border-l-[16px] border-l-cyan-100 border-b-[10px] border-b-transparent ml-2"></div>
                   </div>
