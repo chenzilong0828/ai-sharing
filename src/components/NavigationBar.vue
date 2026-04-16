@@ -50,16 +50,49 @@ onMounted(() => {
 
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-    :class="isScrolled
-      ? 'bg-black/40 backdrop-blur-xl border-b border-white/[0.06]'
-      : 'bg-transparent'"
+    class="fixed z-50 transition-all duration-700 ease-in-out"
+    :class="[
+      isScrolled
+        ? 'top-0 left-0 right-0 bg-black/60 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.4)]'
+        : 'top-0 left-0 right-0 bg-transparent'
+    ]"
   >
-    <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
-      <!-- Logo -->
-      <div class="flex items-center gap-1.5">
-        <span class="text-white font-bold text-lg tracking-tight">AI</span>
-        <span class="text-white/30 font-light text-lg">编程</span>
+    <div class="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
+      <!-- Logo: Liquid Industrial Aesthetics -->
+      <div 
+        class="flex items-center gap-4 cursor-pointer group select-none active:scale-95 transition-all duration-300"
+        @click="scrollTo(sections[0])"
+      >
+        <!-- 标志容器: 动态轨道/磨砂核心 -->
+        <div class="relative w-11 h-11 flex items-center justify-center">
+          <!-- 动态旋转环 (层叠感) -->
+          <div class="absolute inset-0 border-[0.5px] border-white/5 rounded-full group-hover:border-white/20 group-hover:rotate-45 transition-all duration-1000"></div>
+          <div class="absolute inset-1.5 border-[0.5px] border-cyan-500/10 rounded-full group-hover:rotate-[-45deg] transition-all duration-1000"></div>
+          
+          <!-- 磨砂玻璃核心 -->
+          <div class="relative w-8 h-8 bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] rounded-xl flex items-center justify-center group-hover:bg-cyan-500/[0.04] group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-500 overflow-hidden">
+            <!-- 汉特云官方图标 -->
+            <img 
+              src="http://192.168.30.201/hantewin-robot-cloud/favicon.ico" 
+              class="w-5 h-5 object-contain filter drop-shadow-[0_0_3px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-all duration-500"
+              alt="HTW"
+            />
+            <!-- 扫光动画 -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          </div>
+        </div>
+
+        <!-- 文字排版: 极简主义力量感 -->
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2 overflow-hidden">
+            <span class="text-lg font-black text-white tracking-[0.2em] leading-none group-hover:tracking-[0.25em] transition-all duration-500 uppercase">汉特云</span>
+            <div class="h-px w-0 group-hover:w-8 bg-cyan-400/60 transition-all duration-700"></div>
+          </div>
+          <div class="relative mt-1.5 flex items-center gap-2 overflow-hidden">
+            <span class="text-[9px] font-bold text-white/30 tracking-[0.4em] uppercase group-hover:text-white/60 transition-colors">技术分享中心</span>
+            <span class="hidden sm:block text-[7px] font-mono text-cyan-400 opacity-0 group-hover:opacity-100 translate-x-3 group-hover:translate-x-0 transition-all duration-500 italic">v2.0</span>
+          </div>
+        </div>
       </div>
 
       <!-- 导航链接 -->

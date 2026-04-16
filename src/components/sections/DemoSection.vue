@@ -16,6 +16,13 @@ const modalContent = ref('')
 
 const openDoc = async (path: string | undefined, title: string) => {
   if (!path) return
+  
+  // If path is a URL, open it in a new tab
+  if (path.startsWith('http')) {
+    window.open(path, '_blank')
+    return
+  }
+
   modalTitle.value = title
   modalContent.value = 'Loading source code...'
   isModalOpen.value = true
@@ -59,10 +66,17 @@ const groups = [
   {
     title: '🚀 实操协同演示',
     subtitle: '快速而完整的模块建立',
-    content: '演示指令的输入与代码文件的生成写入过程。AI 根据设定的业务实体信息，自动结合上下文和已有的组件模板，直接为文件输出标准格式的页面和组件代码，大量省去重复开发过程。',
+    content: '演示指令的输入与代码文件的生成写入过程。AI 根据设定的业务实体信息，自动结合上下文和已有的组件模板，直接为文件输出标准格式的页面 and 组件代码，大量省去重复开发过程。',
     clickable: false,
     gifSrc: `${base}gif/3.gif`,
     fileName: 'live_demo_3.gif'
+  },
+  {
+    title: '📊 htw-table-vue',
+    subtitle: '高性能工程化数据表格组件',
+    content: '基于 Vue 3 的企业级表格组件实现，支持大数据量渲染、动态配置、插槽扩展等工程化特性。点击跳转至仓库查看源码与文档。',
+    clickable: true,
+    docPath: `http://192.168.30.4/chenzl2/htw-table-vue`
   }
 ]
 </script>
@@ -106,7 +120,7 @@ const groups = [
           :style="{ transitionDelay: `${index * 200}ms` }"
         >
           <!-- 视频占位区 -->
-          <div class="flex-1 w-full relative">
+          <div v-if="group.gifSrc" class="flex-1 w-full relative">
             <div class="group relative rounded-3xl overflow-hidden bg-black/40 border border-white/10 backdrop-blur-xl shadow-2xl shadow-cyan-900/10 hover:border-cyan-500/30 transition-colors duration-500">
               <!-- 控制栏 -->
               <div class="h-10 bg-white/5 border-b border-white/10 flex items-center px-4 gap-2">
@@ -132,7 +146,7 @@ const groups = [
           </div>
 
           <!-- 文本解析卡片区 -->
-          <div class="flex-1 w-full flex flex-col justify-center">
+          <div class="flex-1 w-full flex flex-col justify-center" :class="{ 'lg:max-w-4xl mx-auto': !group.gifSrc && !group.fileName }">
             <!-- 带有交互行为的卡片 -->
             <div 
               class="relative rounded-2xl bg-white/[0.02] border p-8 transition-all duration-300 group"
@@ -151,7 +165,7 @@ const groups = [
 
               <!-- 仅可点击项才显示提示语 -->
               <div v-if="group.clickable" class="mt-8 flex items-center gap-2 text-cyan-400/80 font-mono text-sm opacity-60 group-hover:opacity-100 transition-opacity">
-                <span class="text-lg">➔</span> <span>点击查看完整文件源码</span>
+                <span class="text-lg">➔</span> <span>{{ group.docPath?.startsWith('http') ? '点击跳转至远程仓库' : '点击查看完整文件源码' }}</span>
               </div>
             </div>
           </div>
