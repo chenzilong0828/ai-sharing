@@ -11,31 +11,31 @@ useIntersectionObserver(sectionRef, ([{ isIntersecting }]) => {
 
 const concepts = [
   {
-    title: 'Rules (核心规范)',
+    title: 'Rules (基础规范)',
     icon: '01',
     color: 'text-blue-400',
     bg: 'bg-blue-500/10 border-blue-500/20',
     dot: 'bg-blue-500',
-    description: '指导 AI 行为的基础准则与开发哲学。',
-    details: 'Rules 相当于 AI 的大脑思维限制与开发哲学。无论它是回答问题还是生成代码，都必须优先遵守这里设定的原则（例如 KISS、SOLID、Vue3 强类型规范等）。它可以防止 AI 生成冗余代码或犯低级错误，从而保证团队产出风格高度一致。'
+    description: '“项目的家规”：统一编码风格与架构准则。',
+    details: '告诉 AI 咱们写代码的坏毛病不能要，好习惯要保持（比如严格遵循项目目录结构），让它输出的内容一眼看上去就是咱团队自己写的，保障代码质量的下限。'
   },
   {
-    title: 'MCP (组件与上下文)',
+    title: 'MCP (组件服务集成)',
     icon: '02',
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/10 border-emerald-500/20',
     dot: 'bg-emerald-500',
-    description: '赋予 AI 操作外部世界的接口协议与环境上下文。',
-    details: 'Model Context Protocol 是一项打破 AI 平台壁垒的革命性标准。通过接入 MCP Servers，原本只懂纸上谈兵的 AI 能够安全地读取您的 GitHub Repo、查询核心数据库、操作 Slack 或者进行本地无头浏览器访问。它们构成了 AI 探索与改造全栈项目的“眼”与“手”。'
+    description: '“万能插座”：让 AI 实时连接外部信息。',
+    details: '模型上下文协议 (MCP) 让 AI 像连接了网线一样，能实时看官方文档、设计稿甚至是查数据库，解决它“只靠脑子里旧知识瞎猜”的问题，让协助更精准。'
   },
   {
-    title: 'Skills (原子技能)',
+    title: 'Skills (原子化技能)',
     icon: '03',
     color: 'text-pink-400',
     bg: 'bg-pink-500/10 border-pink-500/20',
     dot: 'bg-pink-500',
-    description: '即插即用、应对特定开发场景的高级指令封装。',
-    details: 'Skills 是我们针对前端设计、后端慢查询优化、安全性排查等具体任务调优的高频 Prompt 集合（犹如 AI 的肌肉记忆）。团队无需重复研究复杂的指令公式，直接 @ 对应技能标签即可精确召唤出某领域的 AI 专家来处理对应的繁杂事务。'
+    description: '“锦囊妙计”：沉淀高效开发的复用套路。',
+    details: '把复杂的排查、重构等重复活儿整理成一键执行的“锦囊”。不管是新手还是老手，遇到相同场景直接拿来即用，大幅减少由于沟通不清带来的反复微调精力。'
   }
 ]
 </script>
@@ -45,10 +45,10 @@ const concepts = [
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-5xl font-bold text-white mb-6" style="font-family: 'Rajdhani', sans-serif">
-          全栈 AI 数据集原理
+          AI 原生开发：三大基石
         </h2>
         <p class="text-white/50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-          我们为业务量身定做的全栈 AI 工作流基于三大支柱组成。了解它们，即可将您的 <strong>Cursor / AI IDE</strong> 打造成无所不能的超级研发中台。
+          我们将 AI 辅助研发提炼为三大基础支柱。熟悉与理解这些部分，方便组织将其转变为高效的研发辅助配置环境。
         </p>
       </div>
 

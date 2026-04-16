@@ -24,9 +24,9 @@ const ides: AiIde[] = [
   {
     id: 'cursor',
     name: 'Cursor',
-    description: '全球 AI IDE 标杆与风向标，基于 VS Code 强分叉打造的革命性编码器。',
-    pros: ['Composer 心智极其成熟，多文件推理无敌', 'Cursor Tab 补全精准，VS Code 生态无缝继承'],
-    cons: ['订阅费用较高 (Pro版)', '强依赖云端，高密级企业可能有隐私顾虑'],
+    description: '业界主流的 AI IDE，基于 VS Code 构建，体验平滑，开箱即用。',
+    pros: ['多文件上下文理解能力强 (Composer)', '支持自定义 .cursorrules 规约', '完全兼容 VS Code 插件生态'],
+    cons: ['核心功能依赖订阅付费 (Pro)', '强依赖云端推理，对隐私高度敏感项目需注意'],
     themeColor: 'from-blue-500/20 to-blue-900/10 border-blue-500/30',
     icon: `<img src="https://th.bing.com/th/id/ODF.kTG-_hIIG6V3DEu1dDQGdg?w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="Cursor Logo" class="w-full h-full object-contain drop-shadow-lg" />`,
     href: 'https://docs.cursor.ac.cn/get-started/welcome'
@@ -34,9 +34,9 @@ const ides: AiIde[] = [
   {
     id: 'windsurf',
     name: 'Windsurf',
-    description: 'Codeium 出品的超级新星，目前极具竞争力的“最快”上下文深度接驳引擎。',
-    pros: ['首创 Cascade 流式全栈理解，上下文穿透极强', '极低幻觉响应速度极快，自带顶流引擎底层驱动'],
-    cons: ['快捷组合与交互习惯需重新适应', '插件商店与细节生态仍在追赶状态'],
+    description: 'Codeium 出品的 AI IDE，主打代码快速生成与深层上下文分析。',
+    pros: ['Cascade 引擎驱动的实时 Agent 流', '对开发者“心流”状态的捕捉非常精准', '基础补全和搜索性能优异'],
+    cons: ['品牌整合期（被 Devin 团队收购）', '插件生态稳定性与 VS Code 仍有细微差异'],
     themeColor: 'from-cyan-500/20 to-teal-900/10 border-cyan-500/30',
     icon: '<img src="https://th.bing.com/th/id/ODF.6EhekcoQt58d76Y3DAJRFQ?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2" alt="Windsurf Logo" class="w-full h-full object-contain drop-shadow-lg" />',
     href: 'https://codeium.com/windsurf'
@@ -44,9 +44,9 @@ const ides: AiIde[] = [
   {
     id: 'trae',
     name: 'Trae',
-    description: '字节跳动倾情推出的强劲良心大作，国内网络穿透力最强的生产力伴侣。',
-    pros: ['完全免费全拉满，不设卡点的爽快体验', '火山引联合大模型加持，原生中文沟通极其懂梗'],
-    cons: ['处于快速迭代期，某些极限重构场景略显浮躁', '功能边界与竞品仍有补全空间'],
+    description: '字节跳动推出的 AI 编码工具，在国内网络环境下稳定性好。',
+    pros: ['支持 Builder 模式 (Agentic Planning)', '具备设计稿直转代码功能 (SVG/Img)', '国内网络优化，目前完全免费'],
+    cons: ['隐私背景引发部分地区用户关注', '产品处于中早期阶段，极细部打磨略欠'],
     themeColor: 'from-indigo-500/20 to-purple-900/10 border-indigo-500/30',
     icon: '<img src="https://th.bing.com/th/id/ODF.YIp5-bd6aV_n2t3WPPiW7w?w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="Trae Logo" class="w-full h-full object-contain drop-shadow-lg" />',
     href: 'https://www.trae.ai/'
@@ -54,9 +54,9 @@ const ides: AiIde[] = [
   {
     id: 'antigravity',
     name: 'Antigravity',
-    description: 'Google 深层架构驱动的原生高维智能体系统 (Agentic Coding)，降维打击的存在。',
-    pros: ['自动接管终端操作与文件树读写，无需干预', '超深度逻辑推理闭环，甚至能自我规划纠错并执行'],
-    cons: ['过于强大导致不适（操作人员有被全盘取代的幻觉）', '重型算力消耗，"过拟合智能"有时需要被动干预'],
+    description: '由深度大模型驱动的原生智能体工具 (Agentic Coding)，具备强大的自动化探索能力。',
+    pros: ['支持终端、文件读写及浏览器完全闭环', '具备高度的逻辑自洽和多步规划能力', '零摩擦的指令执行体验'],
+    cons: ['复杂长链条推理耗时较长', '用户需适应 AI 的高度自主性决策模式'],
     themeColor: 'from-emerald-500/20 to-green-900/10 border-emerald-500/30',
     icon: '<img src="https://th.bing.com/th/id/ODF.LTJ4UWtPwq1QbgrMxsZ5qA?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2" alt="Antigravity Logo" class="w-full h-full object-contain drop-shadow-lg" />',
     href: 'https://deepmind.google/technologies/gemini/'
@@ -64,9 +64,9 @@ const ides: AiIde[] = [
   {
     id: 'void',
     name: 'Void',
-    description: '极客专属的隐私至上、开源自由编辑器，为本地算力狂热者打造。',
-    pros: ['完全开源代码底层，数据绝不上传云端', '完美兼容 Ollama 本地模型与私有接口，白嫖福音'],
-    cons: ['UI 细节打磨和开箱即用度极需改善', '没有资金强推的商业级专属服务器护航'],
+    description: '主打隐私优先的开源编辑器，适合需要本地部署 LLM 的场景。',
+    pros: ['通过本地模型 (Ollama) 实现极致隐私', '完全开源，用户可透视并调整 AI 提示词', '支持直连多种 AI 供应商 (BYOK)'],
+    cons: ['配置选项复杂，上手门槛较高', '性能受本地硬件限制，无缝度不及商业版'],
     themeColor: 'from-zinc-500/20 to-gray-900/10 border-zinc-500/30',
     icon: '<img src="https://voideditor.com/void/logo_cube_noshadow.png" alt="Void Logo" class="w-full h-full object-contain drop-shadow-lg" />',
     href: 'https://voideditor.com/'
@@ -74,9 +74,9 @@ const ides: AiIde[] = [
   {
     id: 'warp',
     name: 'Warp',
-    description: '使用 Rust 构筑并辅以 GPU 渲染硬件加速的二十一世纪 AI Terminal 工作流。',
-    pros: ['区块化 (Block) 的输入输出层级体验极佳', 'AI 命令精准生成引擎，出错一键溯源修正重构'],
-    cons: ['定位为终端工具，并不足以承担完整项目代码主导', '仍有账号注册墙限制'],
+    description: '结合现代交互和 AI 辅助的智能化终端开发工具。',
+    pros: ['块状 (Block) 输出极大优化命令阅读体验', 'AI 命令辅助生成极其灵敏且准确', 'Rust 编写，极端响应速度'],
+    cons: ['强制要求登录，部分隐私敏感用户有顾虑', '仅限终端范畴，不可作为 IDE 替代品'],
     themeColor: 'from-orange-500/20 to-red-900/10 border-orange-500/30',
     icon: '<img src="https://th.bing.com/th/id/ODF.o7PqMmfhkvgGgIhlekG3yQ?w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="Warp Logo" class="w-full h-full object-contain drop-shadow-lg" />',
     href: 'https://docs.warp.dev/'
@@ -84,9 +84,9 @@ const ides: AiIde[] = [
   {
     id: 'kiro',
     name: 'Kiro',
-    description: '小众但高度开放的探索化派系 AI 层级集成（可插拔模型端结构）。',
-    pros: ['结构极度解耦，允许开发者随心切换多端引擎', '轻量级调度资源负担小'],
-    cons: ['缺乏中心化的极强生态维护，操作文档较少', '需要一定的折腾精神进行环境微调'],
+    description: '灵活度很高的探索化 AI 辅助集成环境。',
+    pros: ['Spec-Driven 开发，强制“先规划后编码”', '多代理并发协助，覆盖测试与文档'],
+    cons: ['学习曲线极陡，要求较强的架构规约意识', '社区生态相比 VS Code 系较弱'],
     themeColor: 'from-pink-500/20 to-rose-900/10 border-pink-500/30',
     icon: '<img src="https://th.bing.com/th/id/ODF.zDTT7_I5Se-Xx-pddVf_lQ?w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="Kiro Logo" class="w-full h-full object-contain drop-shadow-lg" />',
     href: 'https://kiro.dev/docs'
@@ -94,9 +94,9 @@ const ides: AiIde[] = [
   {
     id: 'opencode',
     name: 'openCode',
-    description: '打破一切大厂模型屏障的去中心化开放矩阵，拥抱纯粹代码世界的工具链组合。',
-    pros: ['拒绝单一供应商锁定（Vendor Lock-in）', '架构透明，自由拼接各式开源增强插件'],
-    cons: ['配置门槛极高，API Key 管理与链式通讯极其繁杂', '部分能力缺乏官方精细打磨兜底'],
+    description: '致力于开源与开放生态链路的 AI 打包工具集。',
+    pros: ['Go 编写的 CLI/TUI，极致的速度与性能', '模型无关性，通过接口轻松扩展生态', '降低单一核心供应商锁定风险'],
+    cons: ['纯终端/TUI 操作，缺乏图形化直观性', '对零配置、追求开箱即用的用户成本较高'],
     themeColor: 'from-fuchsia-500/20 to-purple-900/10 border-fuchsia-500/30',
     icon: '<img src="https://th.bing.com/th/id/ODF.b79p6WW7zIomJakbm-Jvcw?w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="openCode Logo" class="w-full h-full object-contain drop-shadow-lg" />',
     href: 'https://opencode.ai/docs'
@@ -110,11 +110,11 @@ const ides: AiIde[] = [
       <div class="text-center mb-16" :class="{ 'opacity-100 translate-y-0': isVisible, 'opacity-0 translate-y-12': !isVisible }" style="transition: all 1s ease 0.1s;">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-4">
           <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
-          00 // Overview 引擎库
+          00 // Overview 开发工具
         </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" style="font-family: 'Rajdhani', sans-serif">全球核心 AI IDE 矩阵</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" style="font-family: 'Rajdhani', sans-serif">核心开发工具全览</h2>
         <p class="text-white/40 text-base max-w-2xl mx-auto">
-          脱离干杂数字的虚浮，我们为您全景剖析当今生产力战场中最具统治力的八大兵器。
+          全面剖析当前主流的 AI 辅助编程生态平台，帮助团队根据实际需要选用最合适的开发环境。
         </p>
       </div>
 
@@ -157,7 +157,7 @@ const ides: AiIde[] = [
               <div>
                 <h4 class="text-xs font-mono text-emerald-400 mb-3 flex items-center gap-2">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  杀招 (Advantages)
+                  核心优势 (Pros)
                 </h4>
                 <ul class="space-y-2">
                   <li v-for="pro in ide.pros" :key="pro" class="text-white/80 text-xs flex items-start pl-2">
@@ -171,7 +171,7 @@ const ides: AiIde[] = [
               <div>
                 <h4 class="text-xs font-mono text-rose-400 mb-3 flex items-center gap-2">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  掣肘 (Disadvantages)
+                  局限性 (Cons)
                 </h4>
                 <ul class="space-y-2">
                   <li v-for="con in ide.cons" :key="con" class="text-white/60 text-xs flex items-start pl-2">

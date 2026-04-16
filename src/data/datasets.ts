@@ -13,99 +13,226 @@ export interface DatasetItem {
 export const rulesDataset: DatasetItem[] = [
   {
     id: 'r1',
-    title: '全能前端专家 (Next.js/Vue3/TS/Tailwind)',
-    category: 'Frontend',
-    description: '适用于现代前端工程。强制约束 AI 使用不可变状态、组合式/Hooks API、严格的 TS 类型以及 SSR 性能优化实践。',
+    title: 'AURA-X-KYS 核心哲学 (Global AI Protocol)',
+    category: 'Architecture',
+    description: '集成在 IDE 的终极控制协议。深度融合 KISS、YAGNI 与 SOLID，确立 AI 协作的物理底线与逻辑边界。',
     language: 'markdown',
-    code: `# Frontend Expert Rules
-You are an expert in modern frontend frameworks (React/Next.js or Vue/Nuxt), TypeScript, and Tailwind CSS.
+    code: `# AURA-X-KYS Global AI Protocol (V2.0)
+You are a highly disciplined AI Engineer. You MUST strictly adhere to this protocol.
 
-## 核心原则 (Core Principles)
-1. **严格类型 (Strict Typing)**: 强制使用 TypeScript。绝不使用 any，优先使用 unknown、泛型或显式接口定义 Props/State。
-2. **代码精简 (KISS)**: 保持组件行数在 200 行以内。超出时强制拆分展示组件(Dumb)与容器组件(Smart)。
-3. **性能优先 (Performance)**: 避免在渲染管线中执行昂贵的计算，强制使用 useMemo/computed。对所有图像和外部资源实行懒加载。
+## 1. 核心设计哲学 (The Trinity)
+- **KISS (Keep It Simple)**: 拒绝技术炫技。优先输出可读性最高、分层最清晰的代码。当存在两种实现时，选择逻辑链路最短的那一个。
+- **YAGNI (You Aren't Gonna Need It)**: 禁止任何形式的防御性预留或过度工程。只实现当前任务明确要求的原子功能。
+- **SOLID**: 所有重构必须基于单一职责 (SRP)。函数应像乐高积木一样可自由组合。
 
-## 样式与 UI (Styling & UI)
-- 优先使用 Tailwind CSS 进行样式编写，避免手写魔术数字，使用设计系统变量 (e.g., w-4, text-sm)。
-- 当组合复杂类名时，利用 clsx 或 tailwind-merge 处理动态样式。
-- 遵循无障碍设计 (a11y) 标准：始终为按钮添加 aria-label，为图片添加 alt，确保足够的色彩对比度。
+## 2. 执行纪律 (Operational Mandates)
+- **静默执行 (Silent Execution)**: 禁止输出任何非必要的解释、确认语或“好的/没问题”。直接返回代码交付物。
+- **原子步进 (Atomic Steps)**: 将复杂任务拆解。每一步只修改 1-2 个逻辑点。禁止一次性提交横跨 5 个文件的非原子修改。
+- **零幻觉原则**: 遇到不确定的 API 或框架版本，必须立即声明并请求使用 context7 工具抓取官方文档。
 
-## 状态与逻辑 (State & Logic)
-- React: 完全依赖 Functional Components 和 Hooks。使用 Zustand/Redux Toolkit 处理全局实体状态，使用 React Query / SWR 处理远端数据流和缓存。
-- Vue: 彻底摒弃 Options API，强制使用 <script setup>。用 Pinia 替代 Vuex。通过 Composable 抽取通用业务逻辑。
-
-## 错误处理 (Error Handling)
-- 不要在 UI 层裸漏内部异常。必须有全局 Error Boundary 或拦截器。
-- 异步 API 调用必须有 fallback 状态 (Loading/Error skeletons)。`
+## 3. 禁令清单 (Strict Prohibitions)
+- 严禁在无用户授权的情况下大面积删除存量代码。
+- 严禁在代码中 Hardcode 任何密钥、密匙或敏感配置。
+- 严禁输出超过 150 行的单次工具调用内容 (防止截断导致逻辑腐败)。`
   },
   {
     id: 'r2',
-    title: '后端架构与数据库规范 (Node/Python/Go)',
-    category: 'Backend',
-    description: '包含服务端防崩设计、事务、RESTful API 规范及数据库查询优化（如 N+1 避免、索引使用）。',
+    title: 'Vue 3 & Nuxt 3 深度工程标准',
+    category: 'Frontend',
+    description: 'Vue 生态的生产级开发规范。聚焦响应式性能、类型安全及 Composable 架构的高度内聚设计。',
     language: 'markdown',
-    code: `# Backend Architecture Rules
-You are an expert backend architect specializing in high-concurrency, secure, and scalable systems.
+    code: `# Vue 3 & Nuxt 3 Architecture Standards
+## 1. 核心约束 (Core Constraints)
+- **API Paradigm**: 必须使用 Composition API 与 \`<script setup lang="ts">\`。禁止 Options API。
+- **Strict Typing**: 
+  - 所有 Props 必须使用 \`defineProps<Props>()\` 结构。
+  - 严禁使用 any，优先使用泛型或 \`unknown + Type Guards\`。
+- **Reactivity Safety**: 处理响应式数据时，优先使用 \`shallowRef\` 处理大型第三方实例，避免不必要的深度代理性能损耗。
 
-## 核心架构 (Core Architecture)
-1. **分层设计 (Layered Design)**: 严格区分路由层 (Router)、控制器 (Controller)、业务逻辑层 (Service) 与数据访问层 (Repository)。Controller 中绝不允许包含复杂业务逻辑。
-2. **RESTful 规范**: 严格遵循资源导向的 API 设计。正确返回 HTTP 状态码 (200, 201, 400, 401, 403, 404, 500)。
-3. **幂等性 (Idempotency)**: 所有的 POST/PUT 核心写入接口必须涉及幂等性设计（利用唯一 Token 或分布式锁）。
+## 2. 架构模式 (Architectural Patterns)
+- **Composable First**: 核心业务、API 调用、甚至复杂的 UI 状态逻辑必须抽取为 Composable。
+- **Smart vs Dumb**: 页面组件处理数据获取与状态分发，基础组件仅通过 Props 接收数据并通过 Emits 冒泡事件。
+- **State Management**: 统一使用 Pinia。禁止在组件内定义跨页面共享的状态。
 
-## 数据库与性能 (Database & Performance)
-- **查询优化**: 绝不使用 SELECT *。警惕并在代码审查时消灭 N+1 查询问题（使用 DataLoader 或 JOIN 提前加载）。
-- **事务一致性 (ACID)**: 涉及资金、订单等核心多表写入，强行开启事务保障。
-- **缓存保护**: 高频读取接口必须走 Redis。防范缓存穿透（缓存空值）及缓存雪崩（过期时间加随机抖动）。
-
-## 安全防御 (Security)
-- 任何外界输入 (Query, Body, Params) 都视为不可信，必须前置 DTO 校验层（如 Zod, Joi, class-validator）。
-- 绝不将明文密码、密钥打入日志或写入代码，全量依靠环境变量。
-- 对敏感接口(登录/验证码)加上 Rate Limiting (限流) 中间件防刷。`
+## 3. 性能与发布 (Performance)
+- **Lazy Loading**: 路由组件与重型库 (ECharts, Editor) 必须执行分包。
+- **Vite Mastery**: 利用 \`unplugin-auto-import\` 减少重复引入，但必须严格维护 \`auto-imports.d.ts\`。`
   },
   {
     id: 'r3',
-    title: '软件测试与 TDD 原则 (单元/E2E/集成)',
-    category: 'Testing',
-    description: '强制约束 AI 产生高质量的测试用例。要求边界值覆盖、Mock 隔离以及遵循 AAA 范式，不准编写无断言的假测试。',
+    title: 'Tailwind CSS v4 视觉工程指南',
+    category: 'Frontend',
+    description: '针对 Aura-X 风格的高审美 UI 标准。涵盖设计令牌提取、Modern CSS 特性及 60fps 动效标准。',
     language: 'markdown',
-    code: `# Testing & Quality Assurance Rules
-You are a rigorous Quality Assurance Engineer and TDD practitioner.
+    code: `# Visual Engineering: Tailwind CSS v4
+## 1. 样式哲学 (Styling Philosophy)
+- **Token Based**: 严禁在组件中手写魔术数字间距 (如 mt-[13px])。必须映射到 Tailwind 的 spacing scale。
+- **Atomic Classes**: 保持类名整洁。复合样式超过 5 个类名且重复使用时，考虑提取为 CSS Variable 并在 layer 级别注入。
 
-## 测试基准 (Testing Baseline)
-1. **AAA 范式**: 每个测试用例强制分为明确的三个块：Arrange (准备阶段)、Act (执行阶段)、Assert (断言阶段)。
-2. **独立性**: 测试必须是可重复的，不依赖执行顺序。每次执行前后必须自动清理数据库/状态机。
-3. **核心覆盖率**: 工具类函数和复杂财务/核心业务逻辑，要求100%覆盖核心分支策略。
+## 2. 高级 UI 规范 (Advanced UI)
+- **Aesthetic Precision**: 
+  - Dark Mode 背景色标准: \`bg-[#0a0a0f]\`。
+  - 玻璃效果标准: \`backdrop-blur-xl bg-white/5 border-white/[0.08]\`。
+- **Animations (60fps)**: 
+  - 交互反馈必须包含 \`transition-all\`，时长 \`300ms\`，曲线 \`cubic-bezier(0.4, 0, 0.2, 1)\`。
+  - 动态布局切换必须使用 Layout Transitions (如 Framer Motion 或 Vue Transition)。
 
-## 单元与集成测试 (Unit & Integration)
-- **Mock 粒度**: 在单元测试中，所有涉及网络请求 (Axios/Fetch) 和数据库的操作必须被 Mock 掉。
-- **边界值探测**: 对于所有的输入函数，强制自动生成针对：空值、负数、极大值、边界临界点的破坏性测试。
-- **集成测试**: 当测试 API endpoint 时，必须启动测试数据库容器验证从路由到数据落盘的真实完整主链路逻辑。
-
-## 防御性编码思维
-- 当修复 Bug 时，必须首先编写一个能够复现该 Bug 的失败测试（Red），再编写修复代码使其通过（Green）。
-- 不仅仅要验证 "Happy Path" (正确路径)，还要特地为了异常崩溃抛出编写 try-catch 的测试。`
+## 3. 响应式与修复 (Responsive & Fix)
+- **Mobile First**: 优先编写基础样式，后缀 \`md:\`, \`lg:\` 处理大屏增强。
+- **Conflict Resolution**: 利用 \`tailwind-merge\` 方案解决组件 Props 传入类名与默认类名的覆盖冲突问题。`
   },
   {
     id: 'r4',
-    title: 'AURA-X-KYS 终极 AI 协作纪律',
-    category: 'Architecture',
-    description: '适用于作为 IDE 的全局 .cursorrules。强制规定了 AI 的行为底线、不解释废话、永远遵循 KISS 原则。',
+    title: 'RESTful API & 契约优先协议',
+    category: 'Backend',
+    description: '后端 API 设计的高级守则。强调标准化、错误追踪、DTO 严防及原子事务的链路保护。',
     language: 'markdown',
-    code: `# Global AI Assistant Protocol (AURA-X-KYS)
-You are integrated into the IDE as a highly disciplined Coding Assistant. You MUST strictly adhere to these behavioral rules.
+    code: `# Backend API & Contract-First Protocol
+## 1. 通讯契约 (The Contract)
+- **Semantic URL**: 资源用名词复数 (/orders)，操作谓词由 HTTP Method 承载。禁止动词 URL。
+- **Unified Response**: 
+  \`\`\`json
+  { "code": 0, "data": {}, "message": "success", "trace_id": "uuid" }
+  \`\`\`
+- **Versioning**: 必须通过 URL (/v1/...) 或 Accept Header 进行版本硬隔离。
 
-## 核心设计哲学 (Core Design Philosophy)
-1. **KISS (Keep It Simple, Stupid)**: 不要创造炫技的复杂架构。永远输出最简单直接、能 work 的代码。不要提早抽象。
-2. **YAGNI (You Aren't Gonna Need It)**: 绝对禁止编写超前设计和当下未被明确要求的冗余功能代码。
-3. **SOLID 原则**: 所有重构建议和新功能设计，必须符合单一职责 (SRP) 和开闭原则 (OCP)。
+## 2. 系统防御 (Defense Depth)
+- **Input Validation**: 所有外部输入必须经过 Schema 强校验 (Zod/Joi/Validator)。
+- **DTO Layer**: 禁止直接将数据库模型下发至前端。必须通过 Transformer 剥离敏感字段 (Password, Internal IDs)。
+- **Rate Limiting**: 核心业务写入接口必须实现基于 Redis 的令牌桶并发控制。
 
-## 执行与交互纪律 (Execution Disciplines)
-- **静默执行 (Silent Execution)**: 闭上嘴，直接写代码。禁止输出冗长的 "Okay, I will do this" 或 "Here is an explanation" 等废话。
-- **保护核心区域**: 当你要大面积删除现有代码或更改核心配置文件（如 package.json, webpack, gitignore）时，必须停下并请求用户的显式批准。
-- **绝不隐瞒 (No Hallucination)**: 遇到不在你知识库的最新 API 或框架问题，立刻声明 "我不确定，建议搜索官方文档"，严禁胡乱猜测。
-- **只回答被问的事**: 你的脑海中不存在发散思维。严格将任务拆解为小目标，一步只做一件事并提交。`
+## 3. 异常处理 (Error Handling)
+- 严禁向前端裸露底层数据库报错或堆栈信息。
+- 每一个 5xx 错误必须生成唯一的事件 ID 并持久化至日志系统中以便回溯。`
+  },
+  {
+    id: 'r5',
+    title: 'SQL & 数据库深度实践标准',
+    category: 'Backend',
+    description: '数据层的性能红线与安全壁垒。专注于索引优化、事务范围控制及防范 N+1 陷阱。',
+    language: 'markdown',
+    code: `# Database Intelligence & Optimization
+## 1. 查询性能 (Query Performance)
+- **Anti-N+1**: 严禁在循环体内执行 SQL。必须使用 Eager Loading (Join) 或批量获取模式。
+- **Index Guard**: 
+  - 高频搜索/排序字段必须创建 B-tree 索引。
+  - 严禁在索引列上进行函数运算，防止索引失效。
+- **Selective Retrieval**: 禁止 \`SELECT *\`。仅召回当前业务逻辑绝对必要的字段。
+
+## 2. 事务与并发 (Concurrency)
+- **Small Transactions**: 事务范围需极致压缩。严禁在事务生命周期内调用任何第三方 HTTP 服务。
+- **Optimistic Locking**: 涉及余额、库存更新，强制使用版本号 (Version Column) 实现乐观锁控制。
+
+## 3. 安全防范 (Data Security)
+- **Parameterized Queries**: 绝不使用字符串拼接 SQL。
+- **Data Integrity**: 核心配置表必须实现逻辑删除 (Deleted_at) 而非物理删除，保留审计链路。`
+  },
+  {
+    id: 'r6',
+    title: 'Clean Code: 大厂重构思维导图',
+    category: 'Architecture',
+    description: '将软件工程名著转换为可执行的 Prompt。包含函数、模块、注释及重构步骤的具体量化标准。',
+    language: 'markdown',
+    code: `# Clean Code & Refactoring Mindset
+## 1. 命名与自解释 (Naming Strategy)
+- **Boolean**: 变量名应带 \`is\`, \`has\`, \`should\` 前缀。
+- **Meaning over Length**: 优先选择描述准确的长命名，而非模糊的短缩写。
+
+## 2. 代码结构量化 (Quantitative Metrics)
+- **The Power of 30**: 单个函数逻辑行数不建议超过 30 行。超出则强制职责拆分。
+- **Indentation Depth**: 嵌套层次严禁超过 3 层。通过 Guard Clauses (提前返回) 将逻辑扁平化。
+- **SRP (Single Responsibility)**: 一个模块只承载一个“变更原因”。
+
+## 3. 重构纪律 (Refactoring Workflow)
+- **Red-Green-Refactor**: 重构前必须建立自动化回归测试。
+- **Atomic Commits**: 禁止在同一个提交中进行“功能开发”与“代码重构”。
+- **DRY (Don't Repeat Yourself)**: 发现三次相同的代码片段，合并为公共工具或抽象类。`
+  },
+  {
+    id: 'r7',
+    title: '全栈安全防御: 零信任开发守则',
+    category: 'Backend',
+    description: '从代码编写阶段阻断 80% 的安全漏洞。覆盖 OWASP 主要风险点的防御性编码约束。',
+    language: 'markdown',
+    code: `# Security First: Zero Trust Development
+## 1. 身份与访问 (IAM)
+- **Default Deny**: 所有端点默认受限。必须通过装饰器 (e.g., @Public) 才能显式公开。
+- **Horizontal Auth**: 每个资源访问请求必须验证 \`Owner_ID == Current_User_ID\`，严防 IDOR 越权攻击。
+
+## 2. 注入与跨站防御 (Injection)
+- **XSS Sanitization**: 在模板渲染前，必须对所有非信任 content 进行 HTML 转义。
+- **CSRF Protection**: 所有的 Mutation 请求 (POST/PUT/DELETE) 必须包含 CSRF Token 校验。
+
+## 3. 敏感数据治理 (Data Privacy)
+- **Secrets Management**: 禁止在 git 仓库中存储任何 \`.env\` 文件。必须使用 Secret Store 分发。
+- **Log Masking**: 日志输出前必须过滤 手机号、身份证、邮箱 及 密码 Hash。`
+  },
+  {
+    id: 'r8',
+    title: '现代测试工程: TDD 与 AAA 范式',
+    category: 'Testing',
+    description: '驱动高质量交付的测试准则。从单元测试、集成测试到端到端测试的完整链路规范。',
+    language: 'markdown',
+    code: `# Modern Testing Excellence
+## 1. 核心范式 (The AAA Pattern)
+- **Arrange**: 设置初始状态与 Mock 环境。
+- **Act**: 调用目标函数或触发用户交互。
+- **Assert**: 断言结果与副作用 (Side Effects) 是否符合预期。
+
+## 2. 测试分类与职责 (Testing Taxonomy)
+- **Unit Tests**: 隔离所有 IO。100% 覆盖纯算法与业务规则分支。
+- **Integration Tests**: 模拟真实的 DB/API 交互。验证组件间的契约是否匹配。
+- **E2E Tests**: 走核心业务 Happy Path。关注用户最终交付价值的完整性。
+
+## 3. 测试健壮性 (Robustness)
+- **Deterministic**: 测试结果应不依赖环境、时间或执行顺序。
+- **Edge Case Discovery**: 强制为每个接口编写针对 \`null\`, \`huge strings\`, \`negative numbers\` 的边界破坏测试。`
+  },
+  {
+    id: 'r9',
+    title: 'Git 工作流与 CI/CD 自动化金科玉律',
+    category: 'DevOps',
+    description: '确立研发协作的高速公路。Conventional Commits、发布周期及自动化质量网关。',
+    language: 'markdown',
+    code: `# DevOps & Gitflow Standards
+## 1. 协作流规范 (Collaboration)
+- **Atomic Commits**: 每个 Commit 只解决一个 JIRA/Issue。
+- **Message Convention**: 严格执行 \`type(scope): description\` 格式。
+- **Pruning**: 即使是短期 Feature 分支，在合并后也必须立即删除，保持仓库整洁。
+
+## 2. 自动化质量网关 (Quality Gates)
+- **Pre-commit**: 强制执行 Linting 与 Prettier。
+- **CI Pipeline**: 
+  - 构建失败禁合并。
+  - 单元测试通过率低于 100% 禁合并。
+  - 静态漏洞扫描 (SAST) 指标不达标禁合并。
+
+## 3. 版本与发布 (Releases)
+- **SemVer**: 严格遵守语义化版本控制 (Major.Minor.Patch)。
+- **Changelog**: 必须基于 Commit History 自动生成版本更新日志。`
+  },
+  {
+    id: 'r10',
+    title: '知识管理: 文档即代码 (Docs as Code)',
+    category: 'Documentation',
+    description: '确保项目长青的文档标准。JSDoc、KI (Knowledge Items) 与架构决策日志的编写范式。',
+    language: 'markdown',
+    code: `# Documentation & Knowledge Management
+## 1. 代码内文档 (Living Docs)
+- **JSDoc Mandatory**: 所有导出的类型、函数及类必须具备 JSDoc。包含字段释义、副作用说明及用法示例。
+- **Contextual Comments**: 注释应描述“为什么这么做 (WHY)”而非“做了什么 (WHAT)”。
+
+## 2. 架构决策记录 (ADR)
+- 重大的技术选型、架构变更、以及对 YAGNI 原则的某种“违背”，必须记录 ADR。
+- 格式: 背景 -> 决策 -> 后果 (Status: Proposed / Accepted / Deprecated)。
+
+## 3. 知识资产沉淀 (Knowledge Items)
+- **Bug KIs**: 记录具有代表性的 Bug 及其解法，防止团队成员复现。
+- **Pattern KIs**: 对项目中沉淀的通用解决模式（如：特定的查询优化方案、复杂动效实现）进行归档，方便 AI 后续调用。`
   }
 ]
+
+
 
 export const mcpDataset: DatasetItem[] = [
   {

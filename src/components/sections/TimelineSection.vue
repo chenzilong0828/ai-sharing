@@ -11,7 +11,7 @@ useIntersectionObserver(sectionRef, ([{ isIntersecting }]) => {
 
 const timeline = [
   {
-    stage: '前夜：规则与小模型补全',
+    stage: '规则与小模型补全',
     time: '2022年之前',
     tools: 'Kite、早期 Tabnine、VS IntelliCode',
     type: 'IDE内置功能 / 轻量级插件',
@@ -55,15 +55,15 @@ const timeline = [
   {
     stage: 'AI 原生 IDE 时代：全局上下文协同',
     time: '2023年底-2024年初',
-    tools: 'Cursor、Windsurf、kiro',
+    tools: 'Cursor、Windsurf、Trae',
     type: '深度融合的 AI 原生编码器',
     features: [
-      '全局理解 (Codebase Context)：自动索引全项目，精准回答跨文件架构逻辑。',
+      '全局理解 (Codebase Context)：高性能全局索引 (RAG)，精准回答跨文件架构逻辑。',
       'Diff 视图应用：生成后直接在代码中呈现差异对比，只需点击 Accept。',
-      '多文件协同：Composer 级功能，一句话需求直接跨多个不同文件实现完整功能修改。'
+      '多文件协同：Composer 推导，一句话需求直接跨多个不同文件实现完整功能修改。'
     ],
-    breakthrough: '',
-    limits: '',
+    breakthrough: '实现了从“单文件补全”到“全项目对话”的跨越。',
+    limits: '主要依赖人类主动发起指令（Human-in-the-loop）。',
     color: 'from-emerald-500/20 to-transparent',
     dotContext: 'bg-emerald-400',
     borderGlow: 'group-hover:border-emerald-500/30'
@@ -71,15 +71,15 @@ const timeline = [
   {
     stage: 'Agent 时代：“自主研发工程师”',
     time: '2024年初至今',
-    tools: 'Claude Code、Gemini cli',
-    type: '终端 CLI + 智能任务调度终端',
+    tools: 'Claude Code、Aider、Bolt.new',
+    type: '终端 CLI + 智能任务调度生态',
     features: [
-      'AI 从“辅助工具 (Copilot)”正式进化为“自主代理 (Agent)”。',
-      '不再只写代码，能自主执行跑测试、查报错日志、阅读本地目录、开浏览器校验。',
-      '完全闭环机制：高层目标 → 自己拆解任务 → 修改 → 运行 → 诊断错误 → 自主修复 → 交付验收。'
+      'AI 从“助手 (Copilot)”进化为“代理 (Agent)”，实现自主规划与执行。',
+      '工具连接协议 (MCP)：支持 AI 自由访问本地数据库、浏览器及第三方 API。',
+      '完全闭环机制：高层目标 → 自己拆解任务 → 修改 → 运行测试 → 诊断修复 → 交付验收。'
     ],
-    breakthrough: '跨越人类干预阈值，向完全自动化的 AI 程序员迈进。',
-    limits: '',
+    breakthrough: '跨越人类干预阈值，工作流从“AI辅助”转向“AI驱动”。',
+    limits: '对于极其复杂的长链条决策仍需人类进行最终质量把关。',
     color: 'from-fuchsia-500/20 to-transparent',
     dotContext: 'bg-fuchsia-400',
     borderGlow: 'group-hover:border-fuchsia-500/40'
@@ -142,65 +142,47 @@ const timeline = [
               <span class="text-sm font-bold text-white/50 font-mono tracking-wider border border-white/10 px-3 py-1 bg-white/5 rounded-full">{{ item.time }}</span>
             </div>
 
-            <!-- 右侧：现代玻璃拟物化内容卡片 -->
+            <!-- 右侧：简洁内容卡片 -->
             <div class="pl-[30px] md:pl-10 w-full relative">
               <div 
-                class="relative bg-[#07090e]/80 backdrop-blur-2xl border border-white/5 rounded-2xl p-6 md:p-8 transition-all duration-500 group-hover:-translate-y-1 hover:shadow-2xl overflow-hidden"
+                class="relative bg-[#07090e]/80 backdrop-blur-2xl border border-white/10 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1"
                 :class="item.borderGlow"
               >
-                <!-- 卡片内部炫彩光晕底托 -->
-                <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-br opacity-0 group-hover:opacity-30 blur-[80px] rounded-full pointer-events-none transition-all duration-700 transform translate-x-1/2 -translate-y-1/2" :class="item.color"></div>
+                <!-- 卡片内部悬停发光底色 -->
+                <div class="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 rounded-xl transition-all duration-500 pointer-events-none" :class="item.color"></div>
                 
-                <div class="relative z-10 flex flex-col gap-6">
-                  <!-- 卡片头部 -->
-                  <div>
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
-                        <h3 class="text-2xl font-bold text-white tracking-tight">{{ item.stage }}</h3>
-                        <span class="text-xs font-mono text-white/40 bg-white/5 border border-white/10 px-2 py-1 rounded w-fit">{{ item.type }}</span>
-                    </div>
+                <div class="relative z-10 flex flex-col gap-4">
+                  <!-- 标题头 -->
+                  <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                    <h3 class="text-xl font-bold text-white tracking-tight">{{ item.stage }}</h3>
+                    <span class="text-xs font-mono text-white/50 bg-white/5 px-2 py-1 rounded w-fit">{{ item.type }}</span>
                   </div>
 
-                  <!-- 代表工具区 -->
-                  <div class="bg-black/40 border border-white/[0.03] rounded-xl p-4 flex items-start gap-4">
-                    <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 mt-0.5 border border-white/10">
-                      <svg class="w-4 h-4 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-xs text-white/30 uppercase tracking-widest mb-1.5 font-bold">代表工具体系</p>
-                      <p class="text-white/90 font-medium">{{ item.tools }}</p>
-                    </div>
+                  <!-- 代表工具 -->
+                  <div class="text-sm">
+                    <span class="text-white/40 mr-2 text-xs border border-white/10 bg-black/20 px-1.5 py-0.5 rounded">工具</span>
+                    <span class="text-white/80">{{ item.tools }}</span>
                   </div>
 
-                  <!-- 核心特征/痛点流 -->
-                  <div class="space-y-4">
-                    <ul class="space-y-3">
-                      <li v-for="(feature, i) in item.features" :key="i" class="flex gap-3 text-white/70 text-sm md:text-base leading-relaxed">
-                        <span class="text-white/20 mt-1 shrink-0">✦</span>
-                        <span>{{ feature }}</span>
-                      </li>
-                    </ul>
+                  <!-- 特征描述 -->
+                  <ul class="space-y-2 mt-1">
+                    <li v-for="(feature, i) in item.features" :key="i" class="flex gap-2 text-white/70 text-sm leading-relaxed">
+                      <span class="text-white/20 mt-0.5">✦</span>
+                      <span>{{ feature }}</span>
+                    </li>
+                  </ul>
 
-                    <div class="grid md:grid-cols-2 gap-4 mt-4" v-if="item.breakthrough || item.limits">
-                      <div v-if="item.breakthrough" class="bg-emerald-500/[0.03] border border-emerald-500/10 rounded-xl p-4">
-                        <h4 class="text-xs font-bold text-emerald-400 mb-2 uppercase tracking-wider flex items-center gap-1.5">
-                          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                          核心突破
-                        </h4>
-                        <p class="text-emerald-100/60 text-sm leading-relaxed">{{ item.breakthrough }}</p>
-                      </div>
-
-                      <div v-if="item.limits" class="bg-amber-500/[0.03] border border-amber-500/10 rounded-xl p-4">
-                        <h4 class="text-xs font-bold text-amber-500 mb-2 uppercase tracking-wider flex items-center gap-1.5">
-                          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                          局限与痛点
-                        </h4>
-                        <p class="text-amber-100/60 text-sm leading-relaxed">{{ item.limits }}</p>
-                      </div>
+                  <!-- 突破与局限 -->
+                  <div class="flex flex-col gap-2 mt-2 text-sm" v-if="item.breakthrough || item.limits">
+                    <div v-if="item.breakthrough" class="flex gap-2 text-emerald-400/80 bg-emerald-500/5 p-2 rounded">
+                      <span class="font-bold">✓</span> 
+                      <span>{{ item.breakthrough }}</span>
+                    </div>
+                    <div v-if="item.limits" class="flex gap-2 text-amber-500/80 bg-amber-500/5 p-2 rounded">
+                      <span class="font-bold">⚠</span> 
+                      <span>{{ item.limits }}</span>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>

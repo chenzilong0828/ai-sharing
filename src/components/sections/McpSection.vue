@@ -32,7 +32,7 @@ const filteredMcps = computed(() => {
           02 // MCP Servers
         </div>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" style="font-family: 'Rajdhani', sans-serif">全栈 MCP 组件 (MCP)</h2>
-        <p class="text-white/40 text-base">为任意 AI  IDE 注入跨界能力：接管数据库、访问 AWS，或操作 GitHub</p>
+        <p class="text-white/40 text-base">扩展 AI 的外部操作能力：安全查询核心数据库、访问云服务，或集成代码库工作流等</p>
       </div>
 
       <!-- Filters -->

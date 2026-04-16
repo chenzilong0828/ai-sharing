@@ -7,7 +7,7 @@
  * 2. 鼠标移动大幅增强（位置+旋转双重响应）
  * 3. 宇宙浩瀚感：多层星空 + 宇宙尘雾 + 深空渐变
  */
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import * as THREE from 'three'
 
 const containerRef = ref<HTMLDivElement | null>(null)
@@ -43,6 +43,17 @@ let currentBasePosY = -5
 let currentBasePosZ = 0
 let currentBaseRotX = 0.4
 let currentBaseRotZ = -0.1
+
+const props = defineProps({
+  scrollRatio: {
+    type: Number,
+    default: 0
+  }
+})
+
+watch(() => props.scrollRatio, (newVal) => {
+  globalScrollRatio = Math.max(0, Math.min(1, newVal))
+}, { immediate: true })
 
 // ===== FBM 噪声 =====
 function pseudoRandom(x: number, y: number): number {
@@ -636,35 +647,22 @@ const handleMouseMove = (e: MouseEvent) => {
   targetPosY = -ny
 }
 
-const handleScroll = () => {
-  const maxScroll = document.body.scrollHeight - window.innerHeight
-  if (maxScroll > 0) {
-    globalScrollRatio = Math.max(0, Math.min(1, window.scrollY / maxScroll))
-  }
-}
-
 const handleResize = () => {
   if (!renderer || !camera) return
   renderer.setSize(window.innerWidth, window.innerHeight)
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix()
-  handleScroll() // 尺寸变化时重算比例
 }
 
 onMounted(() => {
   initScene()
   window.addEventListener('mousemove', handleMouseMove, { passive: true })
   window.addEventListener('resize', handleResize, { passive: true })
-  window.addEventListener('scroll', handleScroll, { passive: true })
-  
-  // 初始化首次滚动探测
-  setTimeout(handleScroll, 100)
 })
 
 onUnmounted(() => {
   window.removeEventListener('mousemove', handleMouseMove)
   window.removeEventListener('resize', handleResize)
-  window.removeEventListener('scroll', handleScroll)
   if (animationId) cancelAnimationFrame(animationId)
   moons = []
 

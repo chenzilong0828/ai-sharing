@@ -39,27 +39,27 @@ const base = import.meta.env.BASE_URL
 
 const groups = [
   {
-    title: '🧠 灵魂注入: SKILL.md',
-    subtitle: 'HTW-Table 首席专家身份与基石原则',
-    content: '通过解析技能设定文件，确立 AI 的架构信仰。强制要求遵循 AURA-X-KYS 原则（KISS、YAGNI、SOLID），要求“配置即 UI”，彻底解耦视图和逻辑层，并且严格禁止随意生成冗余的表格分页组件代码。',
+    title: '🧠 明确系统配置',
+    subtitle: '核心系统设定与模板规划',
+    content: '合理使用系统提示词和配置文件设定基础。强制项目结构与设计原则统一（如 KISS、YAGNI），让开发重点回归功能实现，而非重复编写与修改底层模板代码。',
     clickable: true,
     docPath: `${base}docs/gen-crud-skill.md`,
     gifSrc: `${base}gif/1.gif`,
     fileName: 'ai_blueprint_1.gif'
   },
   {
-    title: '⛓️ 执行框架: workflow/gen-curd.md',
-    subtitle: '标准化的四步强制纯文本向导',
-    content: '不再是一键盲猜生成的灾难。系统通过标准 4 步强制拦截对话：1.确认业务实体 -> 2.绑定接口路径 -> 3.精简功能矩阵 -> 4.选定数据列与文件生成。步步为营，确保收集到的需求没有任何二义性。',
+    title: '⛓️ 规范执行工作流',
+    subtitle: '标准的业务确认流程',
+    content: '通过预设的向导模板与 AI 交互，收敛生成范围以防止跑偏：1.确认业务实体模块 -> 2.梳理接口与数据结构 -> 3.明确模块内的小范围功能 -> 4.最终执行生成。采用问答式交互核实验证。',
     clickable: true,
     docPath: `${base}docs/gen-crud-workflow.md`,
     gifSrc: `${base}gif/2.gif`,
     fileName: 'wizard_guide_2.gif'
   },
   {
-    title: '🚀 实操协同',
-    subtitle: '1 + 1 > 2 的极速编码流',
-    content: '用户只需要输入 \`/gen-crud\` 或表达新建增删改查页面意图，系统即刻化身专家。按照一问一答的友好交互最终一键直达，直接利用 write_to_file 写入最干净、可维护性极高的 <htw-table> 规范模板，杜绝后续重构成本。',
+    title: '🚀 实操协同演示',
+    subtitle: '快速而完整的模块建立',
+    content: '演示指令的输入与代码文件的生成写入过程。AI 根据设定的业务实体信息，自动结合上下文和已有的组件模板，直接为文件输出标准格式的页面和组件代码，大量省去重复开发过程。',
     clickable: false,
     gifSrc: `${base}gif/3.gif`,
     fileName: 'live_demo_3.gif'
@@ -86,10 +86,10 @@ const groups = [
           <span class="text-xs font-mono text-cyan-400 tracking-wider">PRACTICAL DEMO</span>
         </div>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight" style="font-family: 'Rajdhani', sans-serif">
-          实操演示 <span class="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">代码自动生成</span>
+          实操演示：<span class="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">代码自动生成工作流</span>
         </h2>
         <p class="text-white/60 text-lg max-w-2xl mx-auto">
-          3 组短视频全面解析：从制定底层规则、触发强制向导到最终极速协同生成。
+          三组视频演示全面解析：从前置系统规范、问答交互确认，到最终完整的模板代码生成协同流。
         </p>
       </div>
 

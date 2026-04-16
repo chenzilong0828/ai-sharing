@@ -11,39 +11,39 @@ useIntersectionObserver(sectionRef, ([{ isIntersecting }]) => {
 
 const paradigmShifts = [
   {
-    title: '传统信息化开发',
-    role: 'Code Writer',
-    desc: '精确控制每一行代码，深度理解实现细节。',
-    flow: '我写代码 → 编译 → 测试',
+    title: '传统研发模式',
+    role: '代码编写者 (Coder)',
+    desc: '精确控制每一行代码逻辑，深度处理各种开发细节。',
+    flow: '阅读需求 → 编写代码 → 编译与测试',
     active: false
   },
   {
-    title: 'AI原生开发 (VibeCoding)',
-    role: 'Code Reviewer + Architect',
-    desc: '高层次控制架构和逻辑，理解如何引导AI和验证结果。',
-    flow: '我描述需求 → AI生成 → 我审查',
+    title: 'AI 辅助开发模式',
+    role: '架构设计与审查者 (Reviewer)',
+    desc: '从高层梳理业务流向与系统规约，拆解任务并引导 AI 协助实现代码框架，随后投入人工核查环节。',
+    flow: '拆解需求 → AI 协助生成初稿 → 人工调优调试',
     active: true
   }
 ]
 
 const practices = [
-  { id: '01', title: '系统提示词', desc: '规范的守护者。在 .cursorrules 中约束风格、技术栈和异常处理。' },
-  { id: '02', title: '方案先行', desc: 'Ask/Plan 模式。先讨论理清表结构、接口链路，方案确认后再 Generate。' },
-  { id: '03', title: '笔记驱动', desc: 'AI 的外部大脑。将讨论结果固化为 docs.md 随时 @ 引用，对抗失忆。' },
-  { id: '04', title: '严格审查', desc: 'Accept 前必看。杜绝思维惰性，统一审查 diff，把控安全与逻辑。' },
-  { id: '05', title: '垂直切分', desc: '小步快跑。按功能链路 (Controller->Service->Mapper) 拆解，保证连贯。' },
-  { id: '06', title: '抽卡思维', desc: '错了就回退。不要在错乱代码上叠补丁，回退代码并调整 Prompt 重新生成。' },
-  { id: '07', title: '频繁存档', desc: 'Git 即时存档。AI 生成质量不错立刻 commit，留存安全伞，保证随时能倒带。' },
-  { id: '08', title: '测试驱动', desc: '自动验证。要求开发完接口立即生成单测并执行，机器防线对抗错漏。' },
-  { id: '09', title: '文档先行', desc: '对抗幻觉。面对新库时，使用 MCP 抓取文档或强制 AI 阅读官方手册。' },
-  { id: '10', title: '模型切分', desc: '术业有专攻。写复杂UI切gemini 3.1，复杂业务切 Claude Opus 4.6。' }
+  { id: '01', title: '配置系统规范', desc: '在项目初始文件中说明技术框架与团队约定，明确代码风格与结构。' },
+  { id: '02', title: '先结构后生成', desc: '采用梳理模型和主逻辑、确认表结构和接口链路，后续再投入编码补全。' },
+  { id: '03', title: '使用文档存留', desc: '讨论分析中产生的最佳实践与接口文档，随时作为参考文件提供给 AI。' },
+  { id: '04', title: '注重人工审查', desc: '生成代码的初稿合并前需仔细检视变动，从边界条件的安全性出发确认合并。' },
+  { id: '05', title: '拆解任务粒度', desc: '复杂请求逐步拆离小块开发，按逻辑的流向阶段连贯开发（如页面->请求->展示）。' },
+  { id: '06', title: '灵活回溯状态', desc: '碰到方向有偏差时，不要在其基础上越堆越多错漏，利用回退机制返回正确的上一步点。' },
+  { id: '07', title: '保持分支整洁', desc: '频繁利用 Git 暂存稳定态内容，避免后期生成的复杂代码覆盖当前正确进度。' },
+  { id: '08', title: '测试例作为补充', desc: '引导编写相应的测试或自测用例作为后续验收，防范改动引起的连环隐患。' },
+  { id: '09', title: '补充新文档集', desc: '将第三方模块的官方手册和示例投喂以扩展工作区的文档认知，削减知识滞后的幻觉。' },
+  { id: '10', title: '模型结合应用', desc: '依据当前场景和擅长点，为对应的流程选择合理的基础模型处理。' }
 ]
 
 const goldenRules = [
-  'AI生成的代码仅为初稿，绝非最终成品',
-  '人类永远是系统架构的设计者与安全质量的把关人',
-  '让AI处理重复繁琐的执行，让人类专注于创造性与系统思维',
-  '时刻保持怀疑精神，批判并验证每一个关键的核心逻辑'
+  'AI输出应始终被视为初稿和基础代码段。',
+  '实际代码合并仍需要作为提交者的最终研判和承担责任。',
+  '工具侧重于承担反复繁琐的过程与模板搭建，避免创造力和系统设计的缺失。',
+  '保持多角度审查心态以防范未遇见的特殊情况和性能衰减。'
 ]
 </script>
 
@@ -58,10 +58,10 @@ const goldenRules = [
           00 // Methodology
         </div>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" style="font-family: 'Rajdhani', sans-serif">
-          VibeCoding 团队实践指南
+          团队应用协同指南
         </h2>
         <p class="text-white/50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-          AI 编程不是“跟着感觉走”，而是 <strong>“严格流程下的高效协作”</strong>。从编码者到架构审查者的蜕变之道。
+          拥抱 AI 的核心变化是流程意识：开发者可以将更大比例的时间分配到<strong>梳理模块结构设计与人工审查保障</strong>工作之上。
         </p>
       </div>
 
@@ -123,7 +123,7 @@ const goldenRules = [
       <!-- 第二层：十大心法 -->
       <div class="mb-20" :class="{ 'translate-y-0 opacity-100': isVisible, 'translate-y-10 opacity-0': !isVisible }" style="transition: all 1s ease-out 0.2s">
         <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
-          <span class="w-6 h-px bg-white/20"></span> 落地的 10 个核心实践
+          <span class="w-6 h-px bg-white/20"></span> 落地的 10 个辅助建议
         </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           <div 
@@ -141,7 +141,7 @@ const goldenRules = [
       <!-- 第三层：黄金法则 -->
       <div :class="{ 'translate-y-0 opacity-100': isVisible, 'translate-y-10 opacity-0': !isVisible }" style="transition: all 1s ease-out 0.4s">
         <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
-          <span class="w-6 h-px bg-white/20"></span> VibeCoding 黄金法则
+          <span class="w-6 h-px bg-white/20"></span> 协同编码守则
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div v-for="rule in goldenRules" :key="rule"

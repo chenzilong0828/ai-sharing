@@ -13,10 +13,22 @@ useIntersectionObserver(sectionRef, ([{ isIntersecting }]) => {
 })
 
 const conclusions = [
-  { icon: '🎯', text: 'AI 不会替代程序员，但会替代不会用 AI 的程序员' },
-  { icon: '🔑', text: 'Prompt Engineering 是新时代开发者的核心竞争力' },
-  { icon: '🌊', text: '从工具使用到工作流变革，AI 正在重塑软件开发的每个环节' },
-  { icon: '💪', text: '拥抱变化，持续学习，让 AI 成为你最强大的编程搭档' },
+  { 
+    icon: '🏗️', 
+    text: '工程化的协同范式：从“写代码”升维至“调度 AI”。核心竞争力在于对领域知识的建模、复杂任务的原子化拆解，以及从高层架构视角对 AI 产出进行精确引导与严苛审核。' 
+  },
+  { 
+    icon: '🛡️', 
+    text: 'Harness：构建确定的协作底盘：承认大模型的概率性与不稳定性。不依赖“运气”获取代码，而是通过控制平面（.claudemd）、上下文治理与验证流水线，锚定系统的可靠性边界。' 
+  },
+  { 
+    icon: '⚖️', 
+    text: '机器对抗幻觉：工具不是能力的延伸，而是受控的接口。利用 MCP 协议、CI/CD 与静态分析工具构建“机器裁判”，用冰冷的工程逻辑对抗大模型的逻辑幻觉。' 
+  },
+  { 
+    icon: '🌌', 
+    text: 'AI 原生研发的终极哲学：技术更迭虽快，但工程底座恒久。核心目标是将 AI 潜能转化为标准化的团队生产力，在承认不可靠的前提下，通过制度与工具链实现交付的确定性。' 
+  },
 ]
 </script>
 
@@ -25,7 +37,7 @@ const conclusions = [
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-8" style="font-family: 'Rajdhani', sans-serif">
-          核心洞见
+          结语：迈向 AI 原生
         </h2>
 
         <div class="space-y-3">
@@ -47,8 +59,6 @@ const conclusions = [
 
       <!-- 底部信息 -->
       <div class="text-center space-y-3">
-        <p class="text-white/20 text-sm">向下滚动</p>
-        <div class="w-[1px] h-5 bg-white/20 mx-auto" />
         <p class="text-white/15 text-xs font-['JetBrains_Mono']">
           纺织工珍妮的眼泪，只是时代的注脚。
         </p>

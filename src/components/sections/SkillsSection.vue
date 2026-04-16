@@ -49,7 +49,7 @@ const filteredSkills = computed(() => {
           03 // Skills
         </div>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" style="font-family: 'Rajdhani', sans-serif">核心技能 (Skills)</h2>
-        <p class="text-white/40 text-base">涵盖前后端业务逻辑、性能调优、重构排雷等全方位工作流技能</p>
+        <p class="text-white/40 text-base">涵盖前后端业务搭建、组件化设计、问题排查等标准的场景式指令合集</p>
       </div>
 
       <!-- Filters -->
@@ -90,6 +90,61 @@ const filteredSkills = computed(() => {
         
         <div v-if="filteredSkills.length === 0" class="col-span-1 md:col-span-2 text-center py-10 text-white/40">
           未找到对应 技能 配置
+        </div>
+      </div>
+
+      <!-- Platform Recommendations -->
+      <div class="mt-32 relative" :class="{ 'translate-y-0 opacity-100': isVisible, 'translate-y-12 opacity-0': !isVisible }" style="transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;">
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-500/5 via-purple-500/5 to-pink-500/5 blur-3xl -z-10"></div>
+        
+        <div class="flex flex-col md:flex-row items-end justify-between mb-10 gap-4">
+          <div>
+            <h3 class="text-3xl font-bold text-white mb-3 tracking-tight">Skills 平台推荐</h3>
+            <p class="text-white/40 max-w-xl">发现并接入更多优质技巧与指令集，探索 AI 能力的无限可能。</p>
+          </div>
+          <div class="flex items-center gap-2 text-white/20 text-xs font-mono">
+            <span>UPDATED 2024.Q4</span>
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
+            <span>CURATED BY AURA-X</span>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="https://www.skillsbot.cn/category/5" target="_blank" rel="noopener noreferrer" class="group block p-8 rounded-3xl bg-black/40 backdrop-blur-xl border border-white/[0.06] hover:border-pink-500/50 transition-all h-full relative overflow-hidden">
+            <div class="text-pink-500 font-mono text-[10px] mb-6 tracking-widest uppercase">Direct // 01</div>
+            <h4 class="text-xl font-bold text-white mb-4 group-hover:text-pink-400 transition-colors">SkillsBot</h4>
+            <p class="text-white/40 text-sm leading-relaxed mb-8 group-hover:text-white/60 transition-colors">
+              专注于提供极致简洁、实操性强的 AI Skill 列表。涵盖前端开发、自动化工作流等核心领域，支持一键复制代码块。
+            </p>
+            <div class="flex items-center gap-2 text-pink-500 group-hover:gap-4 transition-all duration-300">
+              <span class="text-xs font-bold uppercase tracking-wider">Explore</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+          </a>
+
+          <a href="https://skills.dp7575.com/" target="_blank" rel="noopener noreferrer" class="group block p-8 rounded-3xl bg-black/40 backdrop-blur-xl border border-white/[0.06] hover:border-purple-500/50 transition-all h-full relative overflow-hidden">
+            <div class="text-purple-500 font-mono text-[10px] mb-6 tracking-widest uppercase">Community // 02</div>
+            <h4 class="text-xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">Skill 共享平台</h4>
+            <p class="text-white/40 text-sm leading-relaxed mb-8 group-hover:text-white/60 transition-colors">
+              极简主义的 AI Skill 共享社区。由开发者共同维护，专注于垂直领域的深度场景，是寻找实操级 Skill 的绝佳去处。
+            </p>
+            <div class="flex items-center gap-2 text-purple-500 group-hover:gap-4 transition-all duration-300">
+              <span class="text-xs font-bold uppercase tracking-wider">Explore</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+          </a>
+
+          <a href="https://github.com/anthropics/skills" target="_blank" rel="noopener noreferrer" class="group block p-8 rounded-3xl bg-black/40 backdrop-blur-xl border border-white/[0.06] hover:border-rose-500/50 transition-all h-full relative overflow-hidden">
+            <div class="text-rose-500 font-mono text-[10px] mb-6 tracking-widest uppercase">Ecosystem // 03</div>
+            <h4 class="text-xl font-bold text-white mb-4 group-hover:text-rose-400 transition-colors">Anthropic Skills</h4>
+            <p class="text-white/40 text-sm leading-relaxed mb-8 group-hover:text-white/60 transition-colors">
+              Anthropic 官方开源的通用 Skills 能力集。详细定义了 Agent 的各类技能规范与执行逻辑，具有极高的技术参考价值。
+            </p>
+            <div class="flex items-center gap-2 text-rose-500 group-hover:gap-4 transition-all duration-300">
+              <span class="text-xs font-bold uppercase tracking-wider">Explore</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+          </a>
         </div>
       </div>
     </div>
