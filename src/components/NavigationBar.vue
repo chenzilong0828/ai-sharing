@@ -73,7 +73,7 @@ onMounted(() => {
           <div class="relative w-8 h-8 bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] rounded-xl flex items-center justify-center group-hover:bg-cyan-500/[0.04] group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-500 overflow-hidden">
             <!-- 汉特云官方图标 -->
             <img 
-              src="http://192.168.30.201/hantewin-robot-cloud/favicon.ico" 
+              src="/image.png" 
               class="w-5 h-5 object-contain filter drop-shadow-[0_0_3px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-all duration-500"
               alt="HTW"
             />
