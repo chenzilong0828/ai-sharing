@@ -8,6 +8,7 @@ export interface DatasetItem {
   language: string
   code: string
   content?: string
+  video?: string
 }
 
 export const rulesDataset: DatasetItem[] = [
@@ -252,15 +253,16 @@ export const mcpDataset: DatasetItem[] = [
   },
   {
     id: 'm2',
-    title: 'Figma UI 视觉提取与测绘 (Pencil)',
-    category: 'Frontend Tools',
-    description: '让 AI 直通 Figma 的节点设计引擎。能精准拉取 Auto Layout 布局、颜色令牌进行前端 1:1 像素级还原。',
+    title: 'Apifox MCP',
+    category: 'API Tools',
+    description: '让 AI 直通 Apifox 的 API 接口文档系统。能精准读取 API 接口定义和数据模型。',
     language: 'json',
+    video: '/video/apifox.mp4',
     code: `{
   "mcpServers": {
-    "pencil": {
+    "apifox": {
       "command": "npx",
-      "args": ["@pencil/mcp-server"]
+      "args": ["@apifox/mcp-server"]
     }
   }
 }`

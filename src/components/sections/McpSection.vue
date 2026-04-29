@@ -6,6 +6,7 @@ import { mcpDataset } from '../../data/datasets'
 
 const sectionRef = ref<HTMLElement | null>(null)
 const isVisible = ref(false)
+const activeVideo = ref<string | null>(null)
 
 useIntersectionObserver(sectionRef, ([{ isIntersecting }]) => {
   if (isIntersecting) isVisible.value = true
@@ -21,6 +22,16 @@ const filteredMcps = computed(() => {
   if (selectedCategory.value === 'All') return mcpDataset
   return mcpDataset.filter(m => m.category === selectedCategory.value)
 })
+
+const playVideo = (videoPath?: string) => {
+  if (videoPath) {
+    activeVideo.value = videoPath
+  }
+}
+
+const closeVideo = () => {
+  activeVideo.value = null
+}
 </script>
 
 <template>
@@ -54,9 +65,13 @@ const filteredMcps = computed(() => {
         <div 
           v-for="(mcp, index) in filteredMcps" 
           :key="mcp.id"
-          class="rounded-2xl bg-black/40 backdrop-blur-xl border border-white/[0.06] p-8 transition-all duration-700 hover:border-white/20 hover:-translate-y-1"
-          :class="{ 'translate-y-0 opacity-100': isVisible, 'translate-y-12 opacity-0': !isVisible }"
+          class="relative rounded-2xl bg-black/40 backdrop-blur-xl border border-white/[0.06] p-8 transition-all duration-700"
+          :class="[
+            { 'translate-y-0 opacity-100': isVisible, 'translate-y-12 opacity-0': !isVisible },
+            mcp.video ? 'cursor-pointer hover:border-emerald-500/40 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] group' : 'hover:border-white/20 hover:-translate-y-1'
+          ]"
           :style="{ transitionDelay: `${index * 100}ms` }"
+          @click="playVideo(mcp.video)"
         >
           <div class="flex items-center gap-3 mb-4">
             <h3 class="text-xl font-bold text-white tracking-tight">{{ mcp.title }}</h3>
@@ -66,6 +81,15 @@ const filteredMcps = computed(() => {
           </div>
           <p class="text-white/50 text-sm mb-6 leading-relaxed">{{ mcp.description }}</p>
           <CodeSnippet :code="mcp.code" :language="mcp.language" />
+          
+          <!-- Play Icon Overlay -->
+          <div v-if="mcp.video" class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl backdrop-blur-sm z-10">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center backdrop-blur-md">
+              <svg class="w-8 h-8 text-emerald-400 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+                 <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
         </div>
         
         <div v-if="filteredMcps.length === 0" class="col-span-1 md:col-span-2 text-center py-10 text-white/40">
@@ -156,5 +180,15 @@ const filteredMcps = computed(() => {
         </div>
       </div>
     </div>
+
+    <!-- Video Modal -->
+    <Teleport to="body">
+      <div v-if="activeVideo" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md transition-opacity" @click="closeVideo">
+        <button class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2" @click="closeVideo">
+           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+        <video :src="activeVideo" controls autoplay class="max-w-[90vw] max-h-[90vh] rounded-xl shadow-[0_0_50px_rgba(16,185,129,0.15)] border border-white/10" @click.stop></video>
+      </div>
+    </Teleport>
   </section>
 </template>

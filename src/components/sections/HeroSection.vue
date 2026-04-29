@@ -78,6 +78,11 @@ onUnmounted(() => {
           {{ displayText }}<span class="animate-pulse text-white/50">|</span>
         </span>
       </div>
+
+      <!-- 新增：汇报人信息 -->
+      <p class="text-white/40 text-m md:text-base tracking-[0.25em] font-light">
+        汇报人：陈紫龙
+      </p>
     </div>
   </section>
 </template>

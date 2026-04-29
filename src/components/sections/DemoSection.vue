@@ -120,7 +120,7 @@ const groups = [
           :style="{ transitionDelay: `${index * 200}ms` }"
         >
           <!-- 视频占位区 -->
-          <div v-if="group.gifSrc" class="flex-1 w-full relative">
+          <div v-if="group.gifSrc" class="lg:flex-[1.6] flex-1 w-full relative">
             <div class="group relative rounded-3xl overflow-hidden bg-black/40 border border-white/10 backdrop-blur-xl shadow-2xl shadow-cyan-900/10 hover:border-cyan-500/30 transition-colors duration-500">
               <!-- 控制栏 -->
               <div class="h-10 bg-white/5 border-b border-white/10 flex items-center px-4 gap-2">
